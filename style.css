@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Chelsea+Market&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    position: relative; 
+    /* font-family: 'Chelsea Market' ; */
+}
+
+.header {
+    color: whitesmoke; 
+    background: green; 
+    height: 60px;
+}
+
+#logo {
+    float: left; 
+    margin-right: 80px;
+
+}
+#logo h1 {
+    font-family: 'Kaushan Script';
+    margin: 5px;
+
+}
+.navbar {
+    float: right;
+}
+
+.navbar ul{
+    align-items: center;
+    margin: 1px auto;
+    list-style-type: none;
+    padding: 18px;
+}
+
+.navbar ul li{
+    display: inline; 
+    font-size: 15px;
+    border: none;
+    transition: 0.5s;
+    margin: 5px;
+}
+
+.navbar ul li a{
+    width: 47%;
+    height: 32px;
+    padding: 2px 20px;
+    font-weight: 800;
+    border-radius: 8px;
+    font-size: 15px;
+    background: whitesmoke;
+    color: rgb(3,172,14);
+    cursor: pointer;
+    border: 1px solid rgb(3,172,14);
+    text-decoration: none; 
+    font-weight: bold;
+    width: 100%;
+    color:rgb(3,172,14);
+}
+
+.searchBar {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.searchBar input{
+    width: 800px;
+    height: 20px;
+    border-radius: 10px ;
+    margin-top: 8px;
+    padding-left: 10px;
+    padding-right: 1rem;
+}
+
+.navbar ul li a:hover {border-bottom: 2px solid whitesmoke;}
+
+.gambar {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%; 
+    /* display: grid; */
+    /* justify-items: center; */
+    margin-top: 20px;
+    align-items: center;
+}
+
+.gambar .item img{
+    width: 150px;}
+
+.item {
+    border: 1px solid green;
+    border-radius: 10px; 
+    margin:10px; 
+    width: 200px;
+    text-align: center; }
+.item button {
+    color: whitesmoke;
+    background-color: green;
+    border-radius: 5px;
+}
+.item a{
+    border: 1px solid green; 
+    padding:8px; 
+    color: whitesmoke; 
+    background: green; 
+    text-decoration: none; 
+    border-radius: 5px; 
+    cursor: pointer;}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5em;
+}
+
+.checkout {
+    font-weight: normal;
+    color: #333;
+    text-align: center;
+    font-size: 2.5em;
+}
+
+.shop-item {
+    margin: 30px;
+}
+
+.item-barang {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.item-harga {
+    flex-grow: 1;
+    color: orangered;
+    font-weight: bold;
+}
+.shop-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.item-details {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+.card {
+    display: flex;
+}
+
+.btn {
+    text-align: center;
+    vertical-align: middle;
+    padding: .67em .67em;
+    cursor: pointer;
+}
+
+.btn-beli {
+    color: white;
+    background-color: #56CCF2;
+    border: none;
+    border-radius: .3em;
+    font-weight: bold;
+}
+
+.btn-beli:hover {
+    background-color: #2D9CDB;
+}
+
+.card-header {
+    font-weight: bold;
+    font-size: 1.25em;
+    color: #333;
+}
+
+.card-column {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+    margin-right: 1.5em;
+    padding-bottom: 10px;
+    margin-top: 10px;
+}
+
+.card-row {
+    display: flex;
+}
+
+.card-barang {
+    width: 45%;
+}
+
+.card-harga {
+    width: 20%;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.card-jumlah {
+    width: 35%;
+}
+
+.btn-danger {
+    color: white;
+    background-color: #EB5757;
+    border: none;
+    border-radius: .3em;
+    font-weight: bold;
+}
+
+.btn-danger:hover {
+    background-color: #CC4C4C;
+}
+
+.card-quantity-input {
+    height: 34px;
+    width: 50px;
+    border-radius: 5px;
+    border: 1px solid #56CCF2;
+    background-color: #eee;
+    color: #333;
+    padding: 0;
+    text-align: center;
+    font-size: 1.2em;
+    margin-right: 25px;
+}
+
+.card-row:last-child {
+    border-bottom: 1px solid black;
+}
+
+.card-row:last-child .card-column {
+    border: none;
+}
+
+.card-total {
+    text-align: end;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.card-total-harga {
+    color: #333;
+    font-size: 1.1em;
+}
+
+.card-total-barang {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: black;
+    margin-right: 20px;
+}
+
+.btn-purchase {
+    display: block;
+    margin: 40px auto 80px auto;
+    font-size: 1.75em;
+}
+
+
+/* #checkout {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: green;
+    color:whitesmoke;
+    border: 1px solid green; */
+/* } */
+
+/* .footer {
+    text-align: center; 
+    margin: 0; 
+    color: whitesmoke; 
+    background: green; 
+    height: 70%;
+}
+
+.footer p{
+    padding-top:25px;
+} */
