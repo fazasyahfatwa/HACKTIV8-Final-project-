@@ -5,21 +5,21 @@ if (document.readyState == 'loading') {
 }
 
 function ready() {
-    var hapusItem = document.getElementsByClassName('btn-danger')
-    for (var i = 0; i < hapusItem.length; i++) {
-        var button = hapusItem[i]
+    let hapusItem = document.getElementsByClassName('btn-danger')
+    for (let i = 0; i < hapusItem.length; i++) {
+        let button = hapusItem[i]
         button.addEventListener('click', removeCardItem)
     }
 
-    var jumlahInput = document.getElementsByClassName('card-quantity-input')
-    for (var i = 0; i < jumlahInput.length; i++) {
-        var input = jumlahInput[i]
+    let jumlahInput = document.getElementsByClassName('card-quantity-input')
+    for (let i = 0; i < jumlahInput.length; i++) {
+        let input = jumlahInput[i]
         input.addEventListener('change', quantityChanged)
     }
 
-    var addCardToButton = document.getElementsByClassName('btn-item')
-    for (var i = 0; i < addCardToButton.length; i++) {
-        var button = addCardToButton[i]
+    let addCardToButton = document.getElementsByClassName('btn-item')
+    for (let i = 0; i < addCardToButton.length; i++) {
+        let button = addCardToButton[i]
         button.addEventListener('click', addToCardClicked)
     }
 
@@ -28,7 +28,7 @@ function ready() {
 
 function purchaseClicked() {
     alert('Thank you for your purchase')
-    var cardItems = document.getElementsByClassName('card-items')[0]
+    let cardItems = document.getElementsByClassName('card-items')[0]
     while (cardItems.hasChildNodes()) {
         cardItems.removeChild(cardItems.firstChild)
     }
@@ -36,13 +36,13 @@ function purchaseClicked() {
 }
 
 function removeCardItem(event) {
-    var buttonClicked = event.target
+    let buttonClicked = event.target
     buttonClicked.parentElement.parentElement.remove()
     updateCardTotal()
 }
 
 function quantityChanged(event) {
-    var input = event.target
+    let input = event.target
     if (isNaN(input.value) || input.value <= 0) {
         input.value = 1
     }
@@ -50,27 +50,27 @@ function quantityChanged(event) {
 }
 
 function addToCardClicked(event) {
-    var button = event.target
-    var shopItem = button.parentElement.parentElement
-    var title = shopItem.getElementsByClassName('item-barang')[0].innerText
-    var harga = shopItem.getElementsByClassName('item-harga')[0].innerText
-    var imageSrc = shopItem.getElementsByClassName('item-img')[0].src
+    let button = event.target
+    let shopItem = button.parentElement.parentElement
+    let title = shopItem.getElementsByClassName('item-barang')[0].innerText
+    let harga = shopItem.getElementsByClassName('item-harga')[0].innerText
+    let imageSrc = shopItem.getElementsByClassName('item-img')[0].src
     addItemToCard(title, harga, imageSrc)
     updatecardTotal()
 }
 
 function addItemToCard(title, harga, imageSrc) {
-    var cardRow = document.createElement('div')
+    let cardRow = document.createElement('div')
     cardRow.classList.add('card-row')
-    var cardItems = document.getElementsByClassName('card-items')[0]
-    var cardItemNames = cardItems.getElementsByClassName('item-barang')
-    for (var i = 0; i < cardItemNames.length; i++) {
+    let cardItems = document.getElementsByClassName('card-items')[0]
+    let cardItemNames = cardItems.getElementsByClassName('item-barang')
+    for (let i = 0; i < cardItemNames.length; i++) {
         if (cardItemNames[i].innerText == title) {
             alert('This item is already added to the cart')
             return
         }
     }
-    var cardRowContents = `
+    let cardRowContents = `
         <div class="card-barang card-column">
             <img class="item-image" src="${imageSrc}" width="100" height="100">
             <span class="item-barang">${title}</span>
@@ -87,15 +87,15 @@ function addItemToCard(title, harga, imageSrc) {
 }
 
 function updateCardTotal() {
-    var cardItemContainer = document.getElementsByClassName('card-items')[0]
-    var cardRows = cardItemContainer.getElementsByClassName('card-row')
-    var total = 0
-    for (var i = 0; i < cardRows.length; i++) {
-        var cardRow = cardRows[i]
-        var hargaElement = cardRow.getElementsByClassName('card-harga')[0]
-        var quantityElement = cardRow.getElementsByClassName('card-quantity-input')[0]
-        var harga = parseFloat(hargaElement.innerText.replace('$', ''))
-        var quantity = quantityElement.value
+    let cardItemContainer = document.getElementsByClassName('card-items')[0]
+    let cardRows = cardItemContainer.getElementsByClassName('card-row')
+    let total = 0
+    for (let i = 0; i < cardRows.length; i++) {
+        let cardRow = cardRows[i]
+        let hargaElement = cardRow.getElementsByClassName('card-harga')[0]
+        let quantityElement = cardRow.getElementsByClassName('card-quantity-input')[0]
+        let harga = parseFloat(hargaElement.innerText.replace('$', ''))
+        let quantity = quantityElement.value
         total = total + (harga * quantity)
     }
     total = Math.round(total * 100) / 100
